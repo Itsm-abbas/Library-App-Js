@@ -1,0 +1,53 @@
+body{
+  margin: 0;
+}
+.hover-submit:hover {
+  opacity: .9;
+}
+
+#warning {
+  display: none;
+}
+
+#warning.show-warning {
+  display: block;
+  margin: 0;
+}
+
+#success {
+  display: none;
+}
+
+#success.show-success {
+  display: block;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.container {
+  position: relative;
+}
+
+.inputwarn {
+  display: none;
+}
+
+.inputwarn.showinputwarn {
+  display: block;
+}
+
+.deletemsg {
+  height: 1.8rem;
+}
+
+table tr {
+  color: white;
+}
+
+;
+
+.alertText {
+  color: white;
+}

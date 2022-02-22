@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="shortcut icon" href="./svg/logo.jpg" type="image/x-icon">
+  <title>Library App</title>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Dreamer Library</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books.html">Books</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Warning Alert -->
+  <div id="warning">
+    <div class="alert alert-danger d-flex align-items-center my-0" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+      </svg>
+      <div>
+        &nbsp Please have a look you are missing something.
+      </div>
+    </div>
+  </div>
+  <!-- Alert for successfully adding form -->
+  <div id="success">
+    <div class="alert alert-success d-flex align-items-center my-0" role="alert">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle"
+        viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+      </svg>
+      <div>
+        &nbsp Book have been successfully added.
+      </div>
+    </div>
+  </div>
+  <!-- Form -->
+  <div class="container my-2">
+    <form id="Libraryform" onsubmit="return false">
+      <div class="row mb-3">
+        <label for="bookname" class="col-sm-2 col-form-label">Book name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="bookname" placeholder="Enter book name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="author" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="author" placeholder="Enter author name">
+        </div>
+      </div>
+
+      <!-- Radio field -->
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Bookscategory" id="programming" value="programming"
+              checked>
+            <label class="form-check-label" for="programming">
+              Programming
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Bookscategory" id="cooking" value="cooking">
+            <label class="form-check-label" for="cooking">
+              Cooking
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="Bookscategory" id="novel" value="novel">
+            <label class="form-check-label" for="novel">
+              Novel
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-dark hover-submit" id="submitbtn">Add a book</button>
+    </form>
+  </div>
+  <!-- Table -->
+  <div class="deletemsg">
+
+  </div>
+  <div class="container ">
+    <table class="table" id="bookscontainer">
+      <thead>
+        <tr>
+          <th scope="col">Book</th>
+          <th scope="col">Author</th>
+          <th scope="col">Type</th>
+          <th scope="col">-</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+        <!-- Javasript Here -->
+      </tbody>
+    </table>
+  </div>
+
+
+  <script src="./Js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
